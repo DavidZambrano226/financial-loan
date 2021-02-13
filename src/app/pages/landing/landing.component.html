@@ -1,0 +1,56 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Prestamos Financieros</span>
+    </div>
+</nav>
+
+<!-- Image -->
+<div class="landing__container">
+    <img src="../../../assets/img/main-img-landing.jpg" alt="Main img" class="img-fluid">
+    <div class="landing__text-container">
+        <div class="landing__title"> Necesitas Dinero.</div>
+        <div class="landing__subtitle"> Tranquilo, nosotros te prestamos de forma facil y rapida.</div>
+        <a href="#captureData" class="btn btn-light">Solicitar Credito &#8250;</a>
+    </div>
+</div>
+
+<section id="captureData">
+    <form action="" method="post">
+        <div class="card landing__card">
+            <div class="card-body">
+                <h5 class="card-title">Estas a un paso de tu solicitud</h5>
+                <p class="card-text">Completa el siguiente formulario con tus datos personales.</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <label for="name">Nombre y Apellido</label>
+                        <input type="text" class="form-control" placeholder="Juan Perez ..">
+                    </div>
+                    <div class="col">
+                        <label for="name">Num. Documento Identidad</label>
+                        <input type="number" class="form-control" placeholder="1085...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="name">Correo</label>
+                        <input type="mail" class="form-control" placeholder="juanperez@...">
+                    </div>
+                    <div class="col">
+                        <label for="name">Valor solicitado</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-text">.00</span>
+                          </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg" type="button">Solicitar</button>
+                <div class="d-grid gap-2 d-md-block">
+                  </div>
+            </div>
+        </div>
+    </form>
+</section>

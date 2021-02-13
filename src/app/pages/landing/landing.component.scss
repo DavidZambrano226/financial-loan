@@ -1,0 +1,32 @@
+.landing {
+    &__container {
+        display: flex;
+        position: relative;
+        background-color: #3D33FA;
+        overflow: hidden;
+        margin-bottom: 5rem;
+        img {
+            opacity: 0.8;
+        }
+    }
+    &__text-container {
+        width: 50%;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+
+    }
+    &__title {
+        font-size: 80px;
+        font-weight: normal;
+        color: #fff;
+    }
+    &__subtitle {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+    &__card {
+        margin: 0 15px 20px 15px;
+    }
+}

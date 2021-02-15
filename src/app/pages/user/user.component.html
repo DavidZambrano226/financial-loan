@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Identificacion</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.name}}</th>
+        <td>{{user.identification}}</td>
+        <td>
+          <a href="#">Ver solicitudes</a>
+        </td>
+      </tr>
+    </tbody>
+</table>

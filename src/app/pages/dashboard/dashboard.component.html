@@ -1,0 +1,34 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Prestamos En linea</span>
+    </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/dashboard/request">Solicitudes Aprobadas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/users">Usuarios registrados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" routerLink="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Monto base</h5>
+            <h6 class="card-text">$ 1.000.000</h6>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

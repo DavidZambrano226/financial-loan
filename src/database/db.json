@@ -1,0 +1,64 @@
+{
+    "requests": [
+        { 
+            "id": 1, 
+            "date": "2020-12-01", 
+            "ammount": 100000, 
+            "status": 0,
+            "applicant": [
+                { 
+                    "name": "Juanito",
+                    "identification": "12345678"
+                }
+            ] 
+        },
+        { 
+            "id": 2, 
+            "date": "2020-12-01", 
+            "ammount": 100000, 
+            "status": 0,
+            "applicant": [
+                { 
+                    "name": "Juanito",
+                    "identification": "12345678"
+                }
+            ] 
+        },
+        { 
+            "id": 3, 
+            "date": "2020-12-01", 
+            "ammount": 100000, 
+            "status": 0,
+            "applicant": [
+                { 
+                    "name": "Juanito",
+                    "identification": "12345678"
+                }
+            ] 
+        },
+        { 
+            "id": 4, 
+            "date": "2020-12-01", 
+            "ammount": 100000, 
+            "status": 0,
+            "applicant": [
+                { 
+                    "name": "Juanito",
+                    "identification": "12345678"
+                }
+            ] 
+        },
+        { 
+            "id": 5, 
+            "date": "2020-12-01", 
+            "ammount": 100000, 
+            "status": 0,
+            "applicant": [
+                { 
+                    "name": "Juanito",
+                    "identification": "12345678"
+                }
+            ] 
+        }
+    ]
+}

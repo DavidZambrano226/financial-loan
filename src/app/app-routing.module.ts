@@ -5,6 +5,15 @@ const routes: Routes = [
   { 
     path: 'dashboard', 
     loadChildren: () => import('./pages/pages-routing.module').then( m => m.PagesRoutingModule )
+  },
+  { 
+    path: 'landing', 
+    loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingModule )
+  },
+  { 
+    path: '', 
+    redirectTo: 'landing',
+    pathMatch: 'full'
   }
 ];
 

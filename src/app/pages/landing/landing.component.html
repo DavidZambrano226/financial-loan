@@ -1,0 +1,53 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Prestamos en linea</a>
+      <div class="d-flex">
+          <button class="btn btn-primary">Solicitar</button>
+      </div>
+    </div>
+</nav>
+
+<figure class="text-center">
+    <blockquote class="blockquote">
+      <h1>Necesitas dinero</h1>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Tranquilo, te prestamos facil y rapido
+    </figcaption>
+    <button class="btn btn-success">Solicitar</button>
+</figure>
+
+<div class="container">
+    <form [formGroup]="requestForm" (ngSubmit)="saveRequest()">
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Nombre  <span>*</span></label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="col">
+                <label class="form-label">Identificación  <span>*</span> </label>
+                <input type="text" class="form-control" formControlName="identification">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Correo <span>*</span> </label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="col">
+                <label class="form-label">Valor solicitado <span>*</span> </label>
+                <span *ngIf="!requestForm.controls.requestAmmount.valid">El valor solicitado debe estar entre $10.000 y $100.000 </span>
+                <input type="text" class="form-control" formControlName="requestAmmount">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Fecha a pagar</label>
+                <input type="date" class="form-control" formControlName="dateToPay">
+            </div>
+        </div>
+        <div class="row" style="padding: 1rem;">
+            <button [disabled]="requestForm.invalid" class="btn btn-secondary btn-block">Soliciar ahora</button>
+        </div>
+    </form>
+</div>

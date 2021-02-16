@@ -13,4 +13,20 @@ export class TransactionService {
     const url = 'http://localhost:3000/requests';
     return this.http.get(url);
   }
+  getRequestByStatus(status: number): Observable<any> {
+    const url = `http://localhost:3000/requests?status=${status}`;
+    return this.http.get(url);
+  }
+  getRequestPaid(loanPay: number = 0): Observable<any> {
+    const url = `http://localhost:3000/requests?loanPay=${loanPay}`;
+    return this.http.get(url);
+  }
+  getAllUsers(): Observable<any> {
+    const url = 'http://localhost:3000/users';
+    return this.http.get(url);
+  }
+  getRequestByUser(email: string): Observable<any> {
+    const url = `http://localhost:3000/requests?applicant=${email}`;
+    return this.http.get(url);
+  }
 }

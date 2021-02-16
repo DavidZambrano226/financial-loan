@@ -2,14 +2,16 @@
     <thead>
       <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Identificacion</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Correo</th>
         <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <th scope="row">{{user.name}}</th>
+        <td scope="row">{{user.name}}</td>
         <td>{{user.identification}}</td>
+        <td>{{user.email}}</td>
         <td>
           <a href="#">Ver solicitudes</a>
         </td>

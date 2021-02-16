@@ -4,61 +4,63 @@
             "id": 1, 
             "date": "2020-12-01", 
             "ammount": 100000, 
-            "status": 0,
-            "applicant": [
-                { 
-                    "name": "Juanito",
-                    "identification": "12345678"
-                }
-            ] 
+            "status": 1,
+            "loanPay": 0,
+            "applicant": "pepito@gmail.com" 
         },
         { 
             "id": 2, 
             "date": "2020-12-01", 
             "ammount": 100000, 
-            "status": 0,
-            "applicant": [
-                { 
-                    "name": "Juanito",
-                    "identification": "12345678"
-                }
-            ] 
+            "status": 1,
+            "loanPay": 0,
+            "applicant": "maria@gmail.com" 
         },
         { 
             "id": 3, 
             "date": "2020-12-01", 
             "ammount": 100000, 
             "status": 0,
-            "applicant": [
-                { 
-                    "name": "Juanito",
-                    "identification": "12345678"
-                }
-            ] 
+            "loanPay": 0,
+            "applicant": "juanito@gmail.com" 
         },
         { 
             "id": 4, 
             "date": "2020-12-01", 
             "ammount": 100000, 
-            "status": 0,
-            "applicant": [
-                { 
-                    "name": "Juanito",
-                    "identification": "12345678"
-                }
-            ] 
+            "status": 1,
+            "loanPay": 0,
+            "applicant": "juanito@gmail.com" 
         },
         { 
             "id": 5, 
             "date": "2020-12-01", 
             "ammount": 100000, 
             "status": 0,
-            "applicant": [
-                { 
-                    "name": "Juanito",
-                    "identification": "12345678"
-                }
-            ] 
+            "loanPay": 0,
+            "applicant": "juanito@gmail.com" 
+        }
+    ],
+    "users": [
+        { 
+            "name": "Juanito",
+            "identification": "12345678",
+            "email": "juanito@gmail.com"
+        },
+        { 
+            "name": "Juanito",
+            "identification": "12345678",
+            "email": "juanito@gmail.com"
+        },
+        { 
+            "name": "Juanito",
+            "identification": "12345678",
+            "email": "juanito@gmail.com"
+        },
+        { 
+            "name": "Juanito",
+            "identification": "12345678",
+            "email": "juanito@gmail.com"
         }
     ]
 }

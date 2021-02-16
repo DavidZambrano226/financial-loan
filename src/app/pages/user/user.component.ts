@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionService } from '../../core/transaction/transaction.service';
 
 @Component({
   selector: 'app-user',
@@ -7,28 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  users = [
-    { 
-      name: 'Jhon Due',
-      identification: '123455667'
-    },
-    { 
-      name: 'Jhon Due',
-      identification: '123455667'
-    },
-    { 
-      name: 'Jhon Due',
-      identification: '123455667'
-    },
-    { 
-      name: 'Jhon Due',
-      identification: '123455667'
-    }
-  ];
+  users = [] = [];
 
-  constructor() { }
+  constructor(private transactionService: TransactionService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+  getUsers() {
+    this.transactionService.getAllUsers().subscribe(dataUsers => {
+      this.users = dataUsers;
+    });
   }
 
 }

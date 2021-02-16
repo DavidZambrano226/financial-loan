@@ -5,6 +5,8 @@
         <th scope="col">Fecha solicitud</th>
         <th scope="col">Monto solicitado</th>
         <th scope="col">Estado</th>
+        <th scope="col" *ngIf="pendingPaied">Pendiente de pago</th>
+        <th scope="col" *ngIf="pendingPaied">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +16,12 @@
         <td>{{item.ammount | currency}}</td>
         <td>
           <span class="badge bg-primary">{{item.status}}</span>
+        </td>
+        <td  *ngIf="pendingPaied">
+          <span class="badge bg-primary">{{item.loanPay}}</span>
+        </td>
+        <td  *ngIf="pendingPaied">
+          <button class="btn btn-primary">Pagar</button>
         </td>
       </tr>
     </tbody>

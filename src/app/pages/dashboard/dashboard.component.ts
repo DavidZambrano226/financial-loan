@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getAmmount() {
-    this.dataService.bankAmmount$.subscribe(ammount => this.bankAmmount = ammount);
+    this.dataService.bankAmmount$.subscribe(ammount => this.bankAmmount = ammount.toString());
   }
 
 }

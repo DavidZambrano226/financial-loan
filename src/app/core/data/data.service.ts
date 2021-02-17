@@ -14,7 +14,7 @@ export class DataService {
 
   constructor() { }
 
-  emmitAmmount(newAmmount: string = '1000000') {
+  emmitAmmount(newAmmount: number ) {
     this.emmitAmmountOfBank.next(newAmmount);
   }
 }

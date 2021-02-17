@@ -15,13 +15,15 @@
         <td>{{item.date}}</td>
         <td>{{item.ammount | currency}}</td>
         <td>
-          <span class="badge bg-primary">{{item.status}}</span>
+          <span class="badge rounded-pill bg-success" *ngIf="item.status == 1">Aprobado</span>
+          <span class="badge rounded-pill bg-danger" *ngIf="item.status == 0">Rechazado</span>
         </td>
         <td  *ngIf="pendingPaied">
-          <span class="badge bg-primary">{{item.loanPay}}</span>
+          <span class="badge rounded-pill bg-secondary"  *ngIf="item.loanPay == 1">No</span>
+          <span class="badge rounded-pill bg-dark" *ngIf="item.loanPay == 0">Si</span>
         </td>
         <td  *ngIf="pendingPaied">
-          <button class="btn btn-primary">Pagar</button>
+          <button class="btn btn-primary" (click)="payRequest(item)">Pagar</button>
         </td>
       </tr>
     </tbody>

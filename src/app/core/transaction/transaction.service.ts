@@ -37,4 +37,8 @@ export class TransactionService {
     const url = 'http://localhost:3000/requests';
     return this.http.post(url, request);
   }
+  updatePaySatatusRequest(request: any, id: string): Observable<Object> {
+    const url = `http://localhost:3000/requests/${id}/`;
+    return this.http.put(url, request);
+  }
 }

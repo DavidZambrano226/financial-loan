@@ -1,44 +1,52 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { RequestModel } from '../../models/request.model';
+import { UserModel } from '../../models/user.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: `root`
 })
 export class TransactionService {
 
-  constructor( private http: HttpClient ) { }
+  pathApi: string = environment.api;
+
+  constructor( private http: HttpClient ) { 
+    console.log(this.pathApi);
+    
+  }
 
   getAllRequests(): Observable<any> {
-    const url = 'http://localhost:3000/requests';
+    const url = `${this.pathApi}requests`;
     return this.http.get(url);
   }
-  getRequestByStatus(status: number | string): Observable<any> {
-    const url = `http://localhost:3000/requests?status=${status}`;
+  getRequestByStatus(status: number | string): Observable<Object> {
+    const url = `${this.pathApi}requests?status=${status}`;
     return this.http.get(url);
   }
   getRequestPaid(loanPay: number = 0, status: number | string = 1): Observable<any> {
-    const url = `http://localhost:3000/requests?loanPay=${loanPay}&status=${status}`;
+    const url = `${this.pathApi}requests?loanPay=${loanPay}&status=${status}`;
     return this.http.get(url);
   }
-  getAllUsers(): Observable<any> {
-    const url = 'http://localhost:3000/users';
+  getAllUsers(): Observable<Object> {
+    const url = `${this.pathApi}users`;
     return this.http.get(url);
   }
-  getRequestByUser(email: string): Observable<any> {
-    const url = `http://localhost:3000/requests?applicant=${email}`;
+  getRequestByUser(email: string): Observable<Object> {
+    const url = `${this.pathApi}requests?applicant=${email}`;
     return this.http.get(url);
   }
-  saveUser(user: any): Observable<Object> {
-    const url = `http://localhost:3000/users`;
+  saveUser(user: UserModel): Observable<Object> {
+    const url = `${this.pathApi}users`;
     return this.http.post(url, user);
   }
-  saveRequest(request: any): Observable<Object> {
-    const url = 'http://localhost:3000/requests';
+  saveRequest(request: RequestModel): Observable<Object> {
+    const url = `${this.pathApi}requests`;
     return this.http.post(url, request);
   }
-  updatePaySatatusRequest(request: any, id: string): Observable<Object> {
-    const url = `http://localhost:3000/requests/${id}/`;
+  updatePaySatatusRequest(request: RequestModel, id: string): Observable<Object> {
+    const url = `${this.pathApi}requests/${id}/`;
     return this.http.put(url, request);
   }
 }

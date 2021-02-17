@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../core/data/data.service';
 import { TransactionService } from '../../core/transaction/transaction.service';
+import { RequestModel } from '../../models/request.model';
 
 @Component({
   selector: 'app-request',
@@ -9,7 +10,7 @@ import { TransactionService } from '../../core/transaction/transaction.service';
   styleUrls: ['./request.component.scss'],
 })
 export class RequestComponent implements OnInit {
-  dataRequests: [] = [];
+  dataRequests: RequestModel[] = [];
   search: number | string | any;
   pendingPaied = false;
   baseBankAmmount: number;
@@ -46,7 +47,7 @@ export class RequestComponent implements OnInit {
   
   getResquestsData(): void {
     this.transactionService.getRequestByStatus(this.search)
-    .subscribe((data) => {
+    .subscribe((data: RequestModel[]) => {
       this.dataRequests = data;
     });
   }
@@ -60,7 +61,7 @@ export class RequestComponent implements OnInit {
 
   getRequestByUser(): void {
     this.transactionService.getRequestByUser(this.search)
-      .subscribe(request => {
+      .subscribe((request: RequestModel[]) => {
         this.dataRequests = request;
       })
   }
@@ -70,19 +71,20 @@ export class RequestComponent implements OnInit {
     })
   }
 
-  payRequest(item: any): void {
+  payRequest(item: RequestModel): void {
     const newValue = this.baseBankAmmount - parseInt(item.ammount);
     this.dataService.emmitAmmount(newValue);
     const dateToUpdate = new Date();
-    const requestToSave = {
+    const requestToSave: RequestModel = {
       date: dateToUpdate,
+      dateToPay: item.dateToPay,
       ammount: item.ammount,
       status: item.status,
       loanPay: 1,
       applicant: item.applicant
     };
     this.transactionService.updatePaySatatusRequest(requestToSave, item.id)
-      .subscribe(response => {
+      .subscribe((response: RequestModel) => {
         this.getPendingRequests();
       })
   }

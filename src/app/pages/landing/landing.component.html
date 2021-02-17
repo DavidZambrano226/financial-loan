@@ -2,22 +2,22 @@
     <div class="container-fluid">
       <a class="navbar-brand">Prestamos en linea</a>
       <div class="d-flex">
-          <button class="btn btn-primary">Solicitar</button>
+          <a routerLink="/dashboard" class="btn btn-primary">Administrar solicitudes</a>
       </div>
     </div>
 </nav>
 
-<figure class="text-center">
-    <blockquote class="blockquote">
+<figure class="text-center landing__container-title">
+    <blockquote class="blockquote landing__title">
       <h1>Necesitas dinero</h1>
     </blockquote>
     <figcaption class="blockquote-footer">
       Tranquilo, te prestamos facil y rapido
     </figcaption>
-    <button class="btn btn-success">Solicitar</button>
+    <a href="#formContent" class="btn btn-success btn-lg landing__button">Solicitar</a>
 </figure>
 
-<div class="container">
+<div class="container" id="formContent">
     <form [formGroup]="requestForm" (ngSubmit)="saveRequest()">
         <div class="row">
             <div class="col">
@@ -36,7 +36,7 @@
             </div>
             <div class="col">
                 <label class="form-label">Valor solicitado <span>*</span> </label>
-                <span *ngIf="!requestForm.controls.requestAmmount.valid">El valor solicitado debe estar entre $10.000 y $100.000 </span>
+                <p style="color:red;" *ngIf="requestForm.controls.requestAmmount.errors && requestForm.controls.requestAmmount.dirty">El valor solicitado debe estar entre $10.000 y $100.000 </p>
                 <input type="text" class="form-control" formControlName="requestAmmount">
             </div>
         </div>

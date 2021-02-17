@@ -2,6 +2,9 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Prestamos En linea</span>
+      <div class="d-flex">
+        <a routerLink="/" class="btn btn-primary">Cerrar Sesión</a>
+    </div>
     </div>
 </nav>
 <div class="dashboard__container">
@@ -9,7 +12,7 @@
     <div class="col-md-4">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/dashboard/request">Solicitudes pendientes de pago</a>
+          <a class="nav-link active" routerLink="/dashboard/request" routerLinkActive="active">Solicitudes pendientes de pago</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" routerLink="/dashboard/request/1">Solicitudes Aprobadas</a>
@@ -20,9 +23,6 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/dashboard/users">Usuarios registrados</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" routerLink="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
       </ul>
     </div>
     <div class="col-md-8">

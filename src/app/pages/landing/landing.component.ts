@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TransactionService } from '../../core/transaction/transaction.service';
+import { RequestModel } from '../../models/request.model';
 
 @Component({
   selector: 'app-landing',
@@ -11,10 +12,10 @@ export class LandingComponent implements OnInit {
   validAmmount = false;
   createDenied = false;
   requestForm: FormGroup = new FormGroup({
-    name: new FormControl('test', [Validators.required]),
-    identification: new FormControl('34567', [Validators.required]),
-    email: new FormControl('test3@test.com', [Validators.required, Validators.email]),
-    requestAmmount: new FormControl('10000', [
+    name: new FormControl('', [Validators.required]),
+    identification: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    requestAmmount: new FormControl('', [
       Validators.required,
       Validators.min(10000),
       Validators.max(100000),
@@ -50,7 +51,7 @@ export class LandingComponent implements OnInit {
     const currentDate = new Date();
     const isApproved = Math.floor(Math.random() * 2);
 
-    const requestToSave = {
+    const requestToSave: RequestModel = {
       date: currentDate,
       dateToPay: this.requestForm.value.dateToPay,
       ammount: this.requestForm.value.requestAmmount,
@@ -67,8 +68,8 @@ export class LandingComponent implements OnInit {
     
   }
   private validateUserRequest(email: string) {
-    this.transactionService.getRequestByUser(email).subscribe((data) => {
-      const deniedData = data.filter(element => element.status == 0);
+    this.transactionService.getRequestByUser(email).subscribe((data: RequestModel[]) => {
+      const deniedData = data.filter(element =>  element.status == 0);
       if (deniedData.length > 0) {
         this.createDenied = true;
         alert('No logramos crear su solicitud. Al parecer cuenta con una solicitud recazada, comuniquese con nuestro call center para mas información.')

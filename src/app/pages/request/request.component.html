@@ -12,7 +12,7 @@
     <tbody>
       <tr *ngFor="let item of dataRequests">
         <th scope="row">{{item.id}}</th>
-        <td>{{item.date}}</td>
+        <td>{{item.date | date}}</td>
         <td>{{item.ammount | currency}}</td>
         <td>
           <span class="badge rounded-pill bg-success" *ngIf="item.status == 1">Aprobado</span>

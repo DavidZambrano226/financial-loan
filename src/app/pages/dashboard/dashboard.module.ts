@@ -7,9 +7,10 @@ import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [ DashboardComponent ],
+  entryComponents: [ DashboardComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

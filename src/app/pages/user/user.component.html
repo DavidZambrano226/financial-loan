@@ -4,7 +4,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">Identificación</th>
         <th scope="col">Correo</th>
-        <th scope="col">Acciones</th>
+        <th scope="col">Ver solicitudes</th>
       </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
         <td>{{user.identification}}</td>
         <td>{{user.email}}</td>
         <td>
-          <a href="#">Ver solicitudes</a>
+          <button class="btn btn-secondary" (click)="goToRequests(user.email)">Ver</button>
         </td>
       </tr>
     </tbody>

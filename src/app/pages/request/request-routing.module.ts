@@ -8,7 +8,7 @@ const routes: Routes = [
     component: RequestComponent,
   },
   {
-    path: ':status',
+    path: ':search',
     component: RequestComponent,
   }
 ]

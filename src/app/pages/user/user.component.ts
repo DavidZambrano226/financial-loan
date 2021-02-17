@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TransactionService } from '../../core/transaction/transaction.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class UserComponent implements OnInit {
 
   users = [] = [];
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -19,6 +20,10 @@ export class UserComponent implements OnInit {
     this.transactionService.getAllUsers().subscribe(dataUsers => {
       this.users = dataUsers;
     });
+  }
+  goToRequests(email: string): void {
+    // console.log(email);
+    this.router.navigate(['/dashboard/request', email])
   }
 
 }

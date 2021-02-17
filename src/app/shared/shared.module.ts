@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { StatusPipe } from './pipes/status.pipe';
 
 
@@ -8,8 +7,9 @@ import { StatusPipe } from './pipes/status.pipe';
   declarations: [
     StatusPipe
   ],
-  imports: [
-    CommonModule
+  imports: [],
+  exports: [
+    StatusPipe
   ]
 })
 export class SharedModule { }

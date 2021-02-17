@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve -c develop",
+    "start:stg": "ng serve -c stage",
     "start:db": "json-server --watch src/database/db.json",
     "build": "ng build",
     "test": "ng test",

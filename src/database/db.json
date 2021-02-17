@@ -7,6 +7,15 @@
       "status": 1,
       "loanPay": 0,
       "applicant": "pepito@gmail.com"
+    },
+    {
+      "date": "2021-02-17T00:37:12.918Z",
+      "dateToPay": "2021-02-26",
+      "ammount": "10000",
+      "status": 0,
+      "loanPay": 0,
+      "applicant": "test3@test.com",
+      "id": 2
     }
   ],
   "users": [
@@ -15,6 +24,12 @@
       "name": "Pepito",
       "identification": "12345678",
       "email": "pepito@gmail.com"
+    },
+    {
+      "name": "test",
+      "identification": "34567",
+      "email": "test3@test.com",
+      "id": 2
     }
   ]
 }
